@@ -1,0 +1,33 @@
+
+{% extends 'layout.html' %}
+  
+{% block title %}Home{% endblock %}
+  
+{% block content %}
+
+<h1 class="h2">Sanal Futbol</h1>
+
+<img src = "images\sanalfutbol.png" />
+
+
+<!-- BAŞLA: TRT Spor Sitene Ekle -->
+
+<h2 style="padding: 8px; margin: 0; height: 25px; border: 0; border-bottom: solid 1px #ccc;">
+    <a href="https://www.trtspor.com.tr/">
+        <img src="https://www.trtspor.com.tr/static/img/siteneEkle/logo_new_a.png" alt="TRT Spor Haberler" style="border: none 0;">
+    </a>
+</h2>
+    <iframe frameborder="0" width="298" height="282" src="https://www.trtspor.com.tr/puandurumu-ekle/?lig=1&renk=a&baslik=1&resimler=1&a=1"></iframe>
+    <div style="text-align: center;line-height: 23px;border-top: solid 1px #ccc; color: #666; margin-top: 5px;box-shadow: 0 -1px 3px #ccc;">
+        <a style="text-decoration: none;color: #666; font: normal 11px Arial;" href="https://www.trtspor.com.tr/puandurumu_ekle.html" target="_blank">Ayrıntılı Puandurumu Tablosu</a>
+    </div>
+</div>
+<!-- BİTİŞ: TRT Spor Sitene Ekle -->
+
+
+
+
+
+
+<p>Hoş geldiniz, {{ username }}!</p>
+{% endblock %}

@@ -1,1 +1,37 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Coach{% endblock %}
+  
+{% block content %}
 
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+        <th scope="col">game_id</th>
+        <th scope="col">coach_name</th>
+        <th scope="col">coach_lisans_degree</th>
+        <th scope="col">coach_nation</th>
+        <th scope="col">team_name</th>
+        
+   
+      </tr>
+    </thead>
+    <tbody>
+       {% for coach in coaches %} 
+        <tr>
+            
+            <td>{{ coach[ 'coach_id' ] }}</td>
+            <td>{{ coach[ 'coach_name' ] }}</td>
+            <td>{{ coach[ 'coach_lisans_degree' ] }}</td>
+            <td>{{ coach[ 'coach_nation' ] }}</td>
+            <td>{{ coach[ 'team_name' ] }}</td>
+            
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}

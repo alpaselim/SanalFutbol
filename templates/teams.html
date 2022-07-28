@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Team{% endblock %}
+  
+{% block content %}
+
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+ 
+        <th scope="col">team_name</th>
+        <th scope="col">team_nation</th>
+   
+      </tr>
+    </thead>
+    <tbody>
+       {% for team in teams %} 
+        <tr>
+            
+            <td><a href="{{ url_for('team_detail_page', team_id=team['team_id']) }}">{{ team[ 'team_name' ] }}</a></td>
+            <td>{{ team[ 'team_nation' ] }}</td>
+
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}

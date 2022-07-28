@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Leagues{% endblock %}
+  
+{% block content %}
+
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+        <th scope="col">league_id</th>
+        <th scope="col">league_name</th>
+        <th scope="col">league_nation</th>
+        
+   
+      </tr>
+    </thead>
+    <tbody>
+       {% for league in leagues %} 
+        <tr>
+            
+            <td>{{ league[ 'league_id' ] }}</td>
+            <td><a href="{{ url_for('league_detail_page', league_id=league['league_id']) }}">{{ league[ 'league_name' ] }}</a></td>
+            <td>{{ league[ 'league_nation' ] }}</td>
+
+           
+
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}

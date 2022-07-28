@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Player{% endblock %}
+  
+{% block content %}
+
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+        <th scope="col">player_id</th>
+        <th scope="col">player_name</th>
+        <th scope="col">player_surname</th>
+        <th scope="col">player_nation</th>
+        <th scope="col">player_position</th>
+        <th scope="col">Point</th>
+        <th scope="col">player_value(€)</th>
+        
+   
+      </tr>
+    </thead>
+    <tbody>
+       {% for player in player %} 
+        <tr>
+            
+            <td>{{ player[ 'player_id' ] }}</td>
+            <td>{{ player[ 'player_name' ] }}</td>
+            <td>{{ player[ 'player_surname' ] }}</td>
+            <td>{{ player[ 'player_nation' ] }}</td>
+            <td>{{ player[ 'position' ] }}</td>
+            <td>{{ player[ 'point' ] }}</td>
+            <td>{{ player[ 'player_value' ] }}</td>
+
+
+            <td>
+              <form method="post" >
+                <button type="submit" name = "like"    value = "{{ player[player_id] }}" class="btn btn-primary">Like</button>
+                <button type="submit" name = "dislike" value = "{{ player[player_id] }}" class="btn btn-dark">Dislike</button>
+              </form>
+            
+            </td>
+
+           
+
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}

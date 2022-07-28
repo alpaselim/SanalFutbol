@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+  
+{% block title %} {{ manager['manager_name'] }} {% endblock %}
+  
+{% block content %}
+
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+ 
+        <th scope="col">name</th>
+        <th scope="col">surname</th>
+        <th scope="col">age</th>
+        <th scope="col">value(€)</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+       {% for player in players %} 
+        <tr>
+            
+            <td>{{ player[ 'player.player_name' ] }}</td>
+            <td>{{ player[ 'player.player_surname' ] }}</td>
+            <td>{{ player[ 'player.age' ] }}</td>
+            <td>{{ player[ 'player.player_value' ] }}</td>
+           
+
+
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}

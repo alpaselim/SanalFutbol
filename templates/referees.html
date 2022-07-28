@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Referee{% endblock %}
+  
+{% block content %}
+
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+        <th scope="col">Referee_id</th>
+        <th scope="col">Referee_name</th>
+        <th scope="col">Referee_age</th>
+        <th scope="col">Referee_cocart</th>
+
+        
+        
+   
+      </tr>
+    </thead>
+    <tbody>
+       {% for referee in referees %} 
+        <tr>
+            
+            <td>{{ referee[ 'referee_id' ] }}</td>
+            <td><a href="{{ url_for('referee_detail_page', referee_id=referee['referee_id']) }}">{{ referee[ 'referee_name' ] }}</a></td>
+            <td>{{ referee[ 'referee_age' ] }}</td>
+            <td>{{ referee[ 'referee_cocart' ] }}</td>
+
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}

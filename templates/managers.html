@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Manager{% endblock %}
+  
+{% block content %}
+
+<table class="table">
+    <thead class = "thead-dark" >
+      <tr>
+        <th scope="col">manager_id</th>
+        <th scope="col">manager_name</th>
+        <th scope="col">manager_agent</th>
+      
+        
+   
+      </tr>
+    </thead>
+    <tbody>
+       {% for manager in managers %} 
+        <tr>
+            
+            <td>{{ manager[ 'manager_id' ] }}</td>
+            <td><a href="{{ url_for('manager_detail_page', manager_id=manager['manager_id']) }}">{{ manager[ 'manager_name' ] }}</a></td>
+            <td>{{ manager[ 'manager_agent' ] }}</td>
+           
+
+        </tr>
+       {% endfor %}
+    
+      
+     
+    </tbody>
+  </table>
+
+{% endblock content%}
